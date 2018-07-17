@@ -51,25 +51,49 @@
                             <h1>Upload New Data</h1>
                         </header>
                         <h2>At this time uploading data is unavailable. Please contact the Action Mapping Project for further details</h2>
-                        <form method="post" action="#">
-                            <div class="field">
-                                <label for="dataset">Map Dataset ID</label>
-                                <input type="text" name="dataset" id="dataset" required/>
+                            <div class="12u$">
+                                <div class="select-wrapper">
+                                    <select name="school_id" id="school_id">
+                                        <option value="lincoln">Lincoln High</option>
+                                        <option value="first">First Creek</option>
+                                        <option value="adhs">ADHS</option>
+                                        <option value="sacred_heart">Sacred Heart</option>
+                                        <option value="mtsihi">Mt Si High</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div class="field">
-                                <label for="date">Date of Collection</label>
-                                <input name="date" type="date" id="date" required/>
+                            <div class="12u$">
+                                <div class="select-wrapper">
+                                    <select name="year" id="year">
+                                        <option value="2014">2014</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2018">2018</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="12u$">
+                                <div class="select-wrapper">
+                                    <select name="question_id" id="question_id">
+                                        <option value="a">QA</option>
+                                        <option value="b">QB</option>
+                                        <option value="c">QC</option>
+                                        <option value="d">QD</option>
+                                        <option value="e">QE</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="field">
                                 <label for="file">Choose file to upload</label>
                                 <input type="file" id="file" name="file" multiple required>
                             </div>
-                            <!-- Commented out button
+
                             <ul class="actions">
-                                <li><input type="submit" value="Upload"/></li>
+                                <li><button onclick="upload()" class="button">Submit</button></li>
+                                <li><button onclick="upload1()" class="button">Upload</button></li>
                             </ul>
-                            -->
-                        </form>                        
+                      
                     </div>
                 </section>
 
@@ -78,22 +102,22 @@
             <section>
                 <div class="inner">
                     <ul style="white-space: nowrap; list-style: none; display: inline;">
-                    <li style="list-style: none; display: inline;">
-                        <a href="http://www.tacoma.uw.edu/"><img src="images/uwt.jpg" alt=""/></a>
-                    </li>
-                    <li style="list-style: none; display: inline;">
-                        <a href="https://www.metroparkstacoma.org/"><img src="images/metroparks.jpg" alt=""/></a>
-                    </li>
-                    <li style="list-style: none; display: inline;">
-                        <a href="https://www.tacomaschools.org/"><img src="images/tacomapublicschools.png" alt=""/></a>
-                    </li>
-                    <li style="list-style: none; display: inline;">
-                        <a href="https://www.tpchd.org/"><img src="images/tacoma-piercehd.jpg" alt=""/></a>
-                    </li>
-                    <li style="list-style: none; display: inline;">
-                        <a href="http://safest.org//"><img src="images/safestreetslogo.png" style="height: 60px;" alt=""/></a>
-                    </li>
-                </ul>
+                        <li style="list-style: none; display: inline;">
+                            <a href="http://www.tacoma.uw.edu/"><img src="images/uwt.jpg" alt=""/></a>
+                        </li>
+                        <li style="list-style: none; display: inline;">
+                            <a href="https://www.metroparkstacoma.org/"><img src="images/metroparks.jpg" alt=""/></a>
+                        </li>
+                        <li style="list-style: none; display: inline;">
+                            <a href="https://www.tacomaschools.org/"><img src="images/tacomapublicschools.png" alt=""/></a>
+                        </li>
+                        <li style="list-style: none; display: inline;">
+                            <a href="https://www.tpchd.org/"><img src="images/tacoma-piercehd.jpg" alt=""/></a>
+                        </li>
+                        <li style="list-style: none; display: inline;">
+                            <a href="http://safest.org//"><img src="images/safestreetslogo.png" style="height: 60px;" alt=""/></a>
+                        </li>
+                    </ul>
                 </div>
             </section>
 
@@ -125,6 +149,8 @@
         <script src="assets/js/util.js"></script>
         <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
         <script src="assets/js/main.js"></script>
-
+        <script src="assets/js/azure/azure-storage.blob.min.js" type="text/javascript"></script>
+        <script src="assets/js/uploadHandler.js" type="text/javascript"></script>
+        
     </body>
 </html>

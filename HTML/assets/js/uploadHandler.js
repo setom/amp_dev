@@ -1,7 +1,7 @@
 //azure blob storage setup
 const account = {
     name: "ampmapdata",
-    sas: "?sv=2017-11-09&ss=b&srt=sco&sp=rwdlac&se=2018-07-20T07:34:24Z&st=2018-07-11T23:34:24Z&spr=https,http&sig=LWg9zuu1qbD0emhvtcW7SFQncSuIWIYYQbKafhRE9to%3D"
+    sas: "?sv=2017-11-09&ss=b&srt=sco&sp=rwlac&se=2019-07-20T00:44:15Z&st=2018-07-25T16:44:15Z&spr=https,http&sig=F4CMZiph52VBmP6f9XHsSbDN3uAkciMkdZkmLTF64IY%3D"
 };
 
 const blobUri = 'https://' + account.name + '.blob.core.windows.net';
@@ -27,6 +27,19 @@ function upload() {
             console.log(error);
         } else {
             console.log(container.name + " Created.");
+            const file = document.getElementById('file').files[0];
+
+            //send the file as a blob
+            blobService.createBlockBlobFromBrowserFile(containerName,
+                    file.name,
+                    file,
+                    (error, result) => {
+                if (error) {
+                    // Handle blob error
+                } else {
+                    console.log('Upload is successful');
+                }
+            });
         }
     });
 }
